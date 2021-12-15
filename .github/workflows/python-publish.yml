@@ -1,0 +1,97 @@
+# This workflow will upload a Python Package using Twine when a release is created
+# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Upload Python Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build
+    - name: Build package
+      run: python -m build
+    - name: Publish package
+      uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+      with:
+        user: __token__
+        password: ${{ secrets.PYPI_API_TOKEN }}
+        
+        
+        
+        
+        
+        
+# SP=Selling Price
+# cgst=central govt gst
+# sgst=state govt gst
+import os
+import csv
+import sys
+import math
+import numpy as np
+import datetime
+
+dt=[datetime.datetime.now()]
+
+print(dt)
+print("\t GST BILLING SOFTWARE")
+print("\t CREATED BY - BHARAT MANGAL")
+
+busn=input("Enter Your Business Name ")
+item=input("Enter Item Name ")
+SP=[float(input("Enter selling price of item "+item+": "))]
+gstRate=[float(input("Enter GST Rate (%): "))]
+cgst1=np.divide(gstRate,2)
+cgst2=np.divide(cgst1,100)
+cgstf=np.multiply(cgst2,SP)
+sgst=cgstf
+amt=SP+cgstf+sgst # Consumer will buy at this price
+
+print("\t\t\t",busn)
+print("\t\t\t INVOICE")
+print("\t\t\t Item:",item)
+print("\t\t\t Price:",SP)
+print("\t\t\t CGST(@",(np.divide(gstRate,2)),"%):",cgstf)
+print("\t\t\t SGST(@",(np.divide(gstRate,2)),"%):",sgst)
+print("\t\t\t Amount payable:",amt)
+
+import csv
+with open('bill.jpg', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile, delimiter=' ')
+    writer.writerow(busn)
+    writer.writerow("INVOICE")
+    writer.writerow(dt)
+    writer.writerow(item)
+    writer.writerow("Price")
+    writer.writerow(SP)
+    writer.writerow("cgst : gstrate @")
+    writer.writerow(cgstf)
+    writer.writerow("sgst : gstrate @")
+    writer.writerow(sgst)
+    writer.writerow("Amount Payable:")
+    writer.writerow(amt)
+    
+    
+os.startfile("bill.jpg", "print")
+
+#For Converting It To Exe,,, We Use Command TO Run On Command Prompt,,,Command :- auto-py-to-exe
+
