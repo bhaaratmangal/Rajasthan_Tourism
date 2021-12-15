@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title> 
+    User Dashboard
+    </title>
+    
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<style>
+@import url("all.css");
+    
+    h1 {
+     padding:10px;
+        background-color: lightgoldenrodyellow; 
+        margin-left: 100px;
+    }
+body {
+        background: linear-gradient(132deg,#ec5218,#1665c1);
+        animation: background-gradient 2s linear infinite;
+    }
+    @keyframes background-gradient
+    {
+        0%,100%
+        {
+            filter: hue-rotate(0deg);
+        }
+        50%
+        {
+            filter: hue-rotate(360deg);
+        }
+    }
+    
+    video {
+        left:50%;
+        right:50%;
+margin-left:20px;
+
+    }
+    </style>
+    
+    </head>
+
+    <body>
+        <div class="jumbotron">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+            <h1> <b> Welcome User </b> </h1> 
+                </div>
+                <div class="col-md-4">
+                <button type="button" href="index.html" class="btn btn-success" style="padding:10px; font-color:#fff222">
+                   Logout </a>                    
+                    </button>
+
+                </div>
+<br> <br> <br> <br>
+<button type="button" href="#" class="btn btn-danger" style="padding:30px 15px; margin-left:400px"> Foreign Visitor </button>
+<li style="display:inline-block;margin-left:100px; padding:30px 15px" class="second">  <button type="button" class="btn btn-success"> <a href="https://www.irctc.co.in/nget/train-search" style="color: #fff;margin-left:50px"> Click To Book Train Tickets </a> </button> </li> 
+                   
+                </div>
+            </div>
+        </div>
+        <video autoplay="autoplay" id="vid" muted> 
+        <source src="Sands of Thar unveiling Rajasthan.mp4" type="video/mp4">
+            </source>
+        </video>
+    <script>
+        document.getElementById('vid').play();
+    </script>
+    </body>
+</html>

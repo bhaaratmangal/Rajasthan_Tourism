@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>
+		Login Portal
+	</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="login.js"></script>
+
+<style>
+
+	@import url("all.css");
+    
+    .box {
+        background-color: rgba(96,100,98,0.6)
+}
+</style>
+    </head>
+    
+<br \> <br \>
+    
+<body style="background:url('PIRR_2016_WEB[1].jpg'); background-size:cover>
+<div class="jumbotron">
+	<header style="font-weight: bold;"> <center>
+
+		<h1 style="font-family: cursive;"> Welcome To Rajasthan Tourism Login/Signup Page. </h1>
+
+		<br \>
+
+		<h2> Make An Account And Get All Our Services And Benifits. </h2>
+		</center>
+</header>
+</div>
+                                         <br \> <br \>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4" style="margin-left:30%">
+                             
+			<h3 class="login" style="background-color: yellow; border: 5px ridge red; text-align: center"> Login Block </h3>
+			<br \>
+			<div class="box" style="width:500px; height:300px; border: 1px solid black; border-radius: 10px; margin-left: -60px">
+                <form name="login" method="POST" action="login.php">
+                <div class="login">
+				<br \> <br \><h5 style="margin-left: 50px"> Username 
+				<input type="text" name="username" placeholder="Type Your Username" style="margin-left: 10px" required> 
+			</h5>
+				<br \> <br \>
+				<h5 style="margin-left: 50px"> Password
+					<input type="password" name="password" placeholder="Type Your Password" style="margin-left: 15px" required>
+				</h5>
+				<br \> <br \>
+				<button class="btn-success" type="button" onclick="check(this.form)" value="login" name="submit" style="margin-left: 200px; border:5px solid #ff5678"> Submit </button>
+				
+			</div>
+		<script language="javascript">
+		function check(form)
+{
+	if(form.username.value == "indianvisitor" && form.password.value == "indvisit2019")
+	{
+		window.open("indian.html")
+	}
+else
+{
+	alert("Any Of The Credentials Is Wrong")
+     }
+if(form.username.value == "foreignvisitor" && form.password.value == "forvisit2019")
+	{
+		window.open("foreigner.html")
+	}
+else
+{
+	alert("Any Of The Credentials Is Wrong")
+     }
+if(form.username.value == "localvisitor" && form.password.value == "locvisit2019")
+	{
+		window.open("local.html")
+	}
+else
+{
+	alert("Any Of The Credentials Is Wrong")
+     }
+}
+
+</script>
+                                
+			</div>
+            </form>
+            </div>
+                                           
+		
+</div>
+		
+</body>
+
+</html>
